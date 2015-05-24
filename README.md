@@ -1,6 +1,6 @@
 # QuickMarks
  
-QuickMarks is an analytics app for web projects. It helps you track events on your websites. It is built using Rails, Devise, and a few charting libraries.
+[QuickMarks](https://quickmetrics.herokuapp.com) is an analytics app for web projects. It helps you track events on your websites. It is built using Rails, Devise, and a few charting libraries.
 
 Quickmarks analytics offers a few key features:  
 - A client-side JavaScript snippet that allows a user to track events on their website  
