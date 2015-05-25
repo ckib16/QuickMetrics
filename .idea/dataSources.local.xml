@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails blocmetrics: development" uuid="25a05bde-0d49-4563-a6c7-dce322e47628" />
+    <data-source name="Rails blocmetrics: test" uuid="cda4b2c0-375c-4e10-bb82-82b2db12088c" />
+  </component>
+</project>

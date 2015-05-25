@@ -1,0 +1,4 @@
+       Prefix Verb URI Pattern              Controller#Action
+welcome_index GET  /welcome/index(.:format) welcome#index
+welcome_about GET  /welcome/about(.:format) welcome#about
+         root GET  /                        welcome#index
