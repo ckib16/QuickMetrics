@@ -25,6 +25,7 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'faker'
 gem 'figaro'
+gem 'newrelic_rpm'
 
 group :production do
   gem 'pg'
