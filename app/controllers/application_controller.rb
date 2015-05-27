@@ -11,5 +11,3 @@ class ApplicationController < ActionController::Base
   end
 
 end
-
-# TODO Start the Devise gem
