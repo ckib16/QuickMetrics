@@ -27,14 +27,12 @@ class RegisteredApplicationsController < ApplicationController
   def create
     @registered_application = RegisteredApplication.new(registered_application_params)
 
-    respond_to do |format|
-      if @registered_application.save
-        format.html { redirect_to @registered_application, notice: 'Registered application was successfully created.' }
-        format.json { render :show, status: :created, location: @registered_application }
-      else
-        format.html { render :new }
-        format.json { render json: @registered_application.errors, status: :unprocessable_entity }
-      end
+    if @registered_application.save
+      flash[:notice] = "Application was saved."
+      redirect_to @registered_application
+    else
+      flash[:error] = "We couldn't save your application information."
+      render :new
     end
   end
 
@@ -70,6 +68,6 @@ class RegisteredApplicationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def registered_application_params
-      params.require(:registered_application).permit(:url, :user_id)
+      params.require(:registered_application).permit(:url, :user_id, :title)
     end
 end
