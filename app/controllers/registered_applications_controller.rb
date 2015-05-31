@@ -26,6 +26,7 @@ class RegisteredApplicationsController < ApplicationController
   # POST /registered_applications.json
   def create
     @registered_application = RegisteredApplication.new(registered_application_params)
+    @registered_application.user = current_user
 
     if @registered_application.save
       flash[:notice] = "Application was saved."
@@ -68,6 +69,6 @@ class RegisteredApplicationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def registered_application_params
-      params.require(:registered_application).permit(:url, :user_id, :title)
+      params.require(:registered_application).permit(:url, :user, :title)
     end
 end
