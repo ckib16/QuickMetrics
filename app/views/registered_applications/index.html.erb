@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Registered Applications</h1>
-  <div class="media">
-    <div class="media-body">
+  <div class="row">
+    <div class="col-md-8">
+    <h1>Listing Registered Applications</h1>
       <% @registered_applications.each do |registered_application| %>
-          <td><%= link_to registered_application.title, registered_application %></td>
-          <td><%= registered_application.url %></td>
-          <td><%= registered_application.user %></td>
+          <p class="lead"><td><%= link_to registered_application.title, registered_application %></td> <br>
+          <td><%= registered_application.url %></td> <br>
+          <td><%= registered_application.user.name %></td> <br>
           <td><%= link_to 'Show', registered_application %></td>
           <td><%= link_to 'Edit', edit_registered_application_path(registered_application) %></td>
-          <td><%= link_to 'Destroy', registered_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Destroy', registered_application, method: :delete, data: { confirm: 'Are you sure?' } %></td></p>
       <% end %>
 
-      <%= link_to 'New Registered application', new_registered_application_path %>
+      <p class="lead"> <%= link_to 'New Registered application', new_registered_application_path %> </p>
     </div>
   </div>

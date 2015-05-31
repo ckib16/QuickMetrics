@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<p class="lead">
   <strong>Title:</strong>
   <%= @registered_application.title %>
 </p>
 
-<p>
+<p class="lead">
   <strong>Url:</strong>
-  <%= @registered_application.url %>
+  <%= link_to @registered_application.url, "http://#{@registered_application.url}" %>
 </p>
 
-<p>
+<p class="lead">
   <strong>User:</strong>
-  <%= @registered_application.user.email %>
+  <%= @registered_application.user.email %><br>
 </p>
 
 <%= link_to 'Edit', edit_registered_application_path(@registered_application) %> |

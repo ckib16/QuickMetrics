@@ -1,29 +1,21 @@
 class RegisteredApplicationsController < ApplicationController
   before_action :set_registered_application, only: [:show, :edit, :update, :destroy]
 
-  # GET /registered_applications
-  # GET /registered_applications.json
   def index
     @registered_applications = RegisteredApplication.all
   end
 
-  # GET /registered_applications/1
-  # GET /registered_applications/1.json
   def show
     @registered_application = RegisteredApplication.find(params[:id])
   end
 
-  # GET /registered_applications/new
   def new
     @registered_application = RegisteredApplication.new
   end
 
-  # GET /registered_applications/1/edit
   def edit
   end
 
-  # POST /registered_applications
-  # POST /registered_applications.json
   def create
     @registered_application = RegisteredApplication.new(registered_application_params)
     @registered_application.user = current_user
@@ -37,8 +29,6 @@ class RegisteredApplicationsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /registered_applications/1
-  # PATCH/PUT /registered_applications/1.json
   def update
     respond_to do |format|
       if @registered_application.update(registered_application_params)
@@ -51,8 +41,6 @@ class RegisteredApplicationsController < ApplicationController
     end
   end
 
-  # DELETE /registered_applications/1
-  # DELETE /registered_applications/1.json
   def destroy
     @registered_application.destroy
     respond_to do |format|
