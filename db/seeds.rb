@@ -7,3 +7,56 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 require 'faker'
+
+#Create Users
+5.times do
+  user = User.new(
+    name:     Faker::Name.name,
+    email:    Faker::Internet.email,
+    password: Faker::Internet.password
+    )
+  user.skip_confirmation!
+  user.save!
+end
+users = User.all
+
+# Note: by calling `User.new` instead of `create`,
+ # we create an instance of User which isn't immediately saved to the database.
+
+ # The `skip_confirmation!` method sets the `confirmed_at` attribute
+ # to avoid triggering an confirmation email when the User is saved.
+
+ # The `save` method then saves this User to the database.
+
+#Create Registered_Applications
+20.times do
+  RegisteredApplication.create!(
+    user:     users.sample,
+    url:      Faker::Internet.domain_name,
+    title:    Faker::App.name
+    )
+end
+registered_applications = RegisteredApplication.all
+
+#Create Events
+50.times do
+  Event.create!(
+    name:     Faker::Hacker.verb
+    )
+end
+events = Event.all
+
+user = User.first
+user.skip_reconfirmation!
+user.update_attributes!(
+  email: 'ckib16@gmail.com',
+  password: 'testtest'
+  )
+
+puts "Database seeding finished"
+puts "#{User.count} users created"
+puts "#{RegisteredApplication.count} registered_applications created"
+puts "#{Event.count} events created"
+puts
+puts "The first User email is: #{user.email}"
+puts "The first User password is: #{user.password}"
