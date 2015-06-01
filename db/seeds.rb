@@ -50,6 +50,7 @@ user = User.first
 user.skip_reconfirmation!
 user.update_attributes!(
   email: 'ckib16@gmail.com',
+  name:  'Chris Kibble',
   password: 'testtest'
   )
 
@@ -58,5 +59,6 @@ puts "#{User.count} users created"
 puts "#{RegisteredApplication.count} registered_applications created"
 puts "#{Event.count} events created"
 puts
+puts "The first User name is: #{user.name}"
 puts "The first User email is: #{user.email}"
 puts "The first User password is: #{user.password}"
