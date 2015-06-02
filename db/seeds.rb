@@ -29,7 +29,7 @@ users = User.all
  # The `save` method then saves this User to the database.
 
 #Create Registered_Applications
-20.times do
+10.times do
   RegisteredApplication.create!(
     user:     users.sample,
     url:      Faker::Internet.domain_name,
@@ -39,9 +39,10 @@ end
 registered_applications = RegisteredApplication.all
 
 #Create Events
-50.times do
+100.times do
   Event.create!(
-    name:     Faker::Hacker.verb
+    name:     Faker::Hacker.verb,
+    registered_application: registered_applications.sample
     )
 end
 events = Event.all
