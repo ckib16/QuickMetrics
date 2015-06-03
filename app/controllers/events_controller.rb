@@ -17,7 +17,7 @@ class EventsController < ApplicationController
 
   def create
     @registered_application = RegisteredApplication.find(params[:registered_application_id])
-    @event = @registered_application.events.build( event_params)
+    @event = @registered_application.events.build(event_params)
 
     respond_to do |format|
       if @event.save
