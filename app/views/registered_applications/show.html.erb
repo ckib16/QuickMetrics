@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Registered Application</h1>
+
 <p class="lead">
-  <strong>Title:</strong>
+  <strong>App Title:</strong>
   <%= @registered_application.title %>
 </p>
 
@@ -16,11 +18,22 @@
 </p>
 
 <p class="lead">
-  <strong>Events:</strong><br>
-  <% @event_count.each do |event, number| %>
-    <%= event %>: <%= number %><br>
-  <% end %>
+  <strong>Events Log:</strong><br>
 </p>
+<div class="table-responsive col-md-4">
+  <table class="table table-striped">
+    <tr>
+      <th>Event</th>
+      <th>Number</th>
+    </tr>
+    <tr>
+    <% @event_count.each do |event, number| %>
+      <td><%= event %></td>
+      <td><%= number %></td>
+    </tr>
+    <% end %>
+  </table>
+<div>
 
 
 <%= link_to 'Edit', edit_registered_application_path(@registered_application) %> |
