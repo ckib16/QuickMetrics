@@ -3,6 +3,7 @@ class RegisteredApplicationsController < ApplicationController
 
   def index
     @registered_applications = RegisteredApplication.all
+    authorize @registered_applications
   end
 
   def show
@@ -17,6 +18,7 @@ class RegisteredApplicationsController < ApplicationController
 
   def new
     @registered_application = RegisteredApplication.new
+    authorize @registered_application
   end
 
   def edit
@@ -25,6 +27,7 @@ class RegisteredApplicationsController < ApplicationController
   def create
     @registered_application = RegisteredApplication.new(registered_application_params)
     @registered_application.user = current_user
+    authorize @registered_application
 
     if @registered_application.save
       flash[:notice] = "Application was saved."

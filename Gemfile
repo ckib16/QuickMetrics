@@ -26,6 +26,7 @@ gem 'bootstrap-sass'
 gem 'faker'
 gem 'figaro'
 gem 'newrelic_rpm'
+gem 'pundit'
 
 group :production do
   gem 'pg'
