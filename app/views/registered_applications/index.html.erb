@@ -12,6 +12,9 @@
           <td><%= link_to 'Destroy', registered_application, method: :delete, data: { confirm: 'Are you sure?' } %></td></p>
       <% end %>
 
-      <p class="lead"> <%= link_to 'New Registered application', new_registered_application_path %> </p>
+      <% if policy(RegisteredApplication.new).create? %>
+        <p class="lead"> <%= link_to 'New Registered application', new_registered_application_path %> </p>
+      <% end %>
+
     </div>
   </div>

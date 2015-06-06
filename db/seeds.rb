@@ -52,7 +52,8 @@ user.skip_reconfirmation!
 user.update_attributes!(
   email: 'ckib16@gmail.com',
   name:  'Chris Kibble',
-  password: 'testtest'
+  password: 'testtest',
+  role:   'admin' 
   )
 
 puts "Database seeding finished"

@@ -3,6 +3,7 @@ class RegisteredApplicationsController < ApplicationController
 
   def index
     @registered_applications = RegisteredApplication.all
+    authorize @registered_applications
   end
 
   def show
@@ -17,14 +18,17 @@ class RegisteredApplicationsController < ApplicationController
 
   def new
     @registered_application = RegisteredApplication.new
+    authorize @registered_application
   end
 
   def edit
+    authorize @registered_application
   end
 
   def create
     @registered_application = RegisteredApplication.new(registered_application_params)
     @registered_application.user = current_user
+    authorize @registered_application
 
     if @registered_application.save
       flash[:notice] = "Application was saved."
@@ -36,6 +40,8 @@ class RegisteredApplicationsController < ApplicationController
   end
 
   def update
+    authorize @registered_application
+
     respond_to do |format|
       if @registered_application.update(registered_application_params)
         format.html { redirect_to @registered_application, notice: 'Registered application was successfully updated.' }
