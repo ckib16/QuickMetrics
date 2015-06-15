@@ -27,6 +27,8 @@ gem 'faker'
 gem 'figaro'
 gem 'newrelic_rpm'
 gem 'pundit'
+gem 'chartkick'
+gem 'groupdate'
 
 group :production do
   gem 'pg'
