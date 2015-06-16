@@ -1,4 +1,4 @@
-//snippet to put in tracked application
+//QuickMetrics snippet to put in tracked application
 
 $(document).ready( function(){
   var _bm_event = {
@@ -6,7 +6,7 @@ $(document).ready( function(){
   }
 
   var _bm_request = new XMLHttpRequest();
-  _bm_request.open("POST", "http://localhost:3000/api/events", true);
+  _bm_request.open("POST", "https://quickmetrics.herokuapp.com//api/events", true);
   _bm_request.setRequestHeader('Content-Type', 'application/json');
   _bm_request.onreadystatechange = function() {
     // respond to controller finish events
