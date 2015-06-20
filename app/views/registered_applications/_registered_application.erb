@@ -1,0 +1,12 @@
+<div class="media">
+  <div class="media-body">
+    <p class="lead"><td><%= link_to registered_application.title, registered_application %></td> <br>
+      <td><%= registered_application.url %></td> <br>
+      <td><%= registered_application.user.name %></td> <br>
+      <td><%= link_to 'Show', registered_application %></td>
+      <td><%= link_to 'Edit', edit_registered_application_path(registered_application) %></td>
+      <td><%= link_to 'Destroy', registered_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </p>
+  </div>
+</div>
+
