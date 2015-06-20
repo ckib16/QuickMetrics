@@ -2,7 +2,11 @@ class RegisteredApplicationsController < ApplicationController
   before_action :set_registered_application, only: [:show, :edit, :update, :destroy]
 
   def index
-    @registered_applications = RegisteredApplication.all
+    if current_user.role == 'admin'
+      @registered_applications = RegisteredApplication.all
+    else
+      @registered_applications = current_user.registered_applications
+    end
     authorize @registered_applications
   end
 
