@@ -3,24 +3,16 @@
 
 <!-- Carousel ============================== -->
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false" data-pg-collapsed>
-  <!-- Indicators -->
-  <div class="carousel-inner">
-    <div class="item active center-block">
-      <img src="http://lorempixel.com/1240/600/nature/3" alt="First slide" class="image-responsive" >
-      <div class="container">
-        <div class="carousel-caption">
-          <h1>QuickMetrics</h1>
-          <p>A Quick &amp; Useful Analytics API. Built on Rails.</p>
-          <% if current_user%>
-          <% else %>
-            <p> <%= link_to "Sign In", new_user_session_path, class: "btn btn-primary" %> or <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %> today! </p>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<header class="image-bg-fluid-height">
+        <h1>QuickMetrics</h1>
+        <h3>A Quick &amp; Useful Analytics API. Built on Rails.</h3>
+        <% if current_user%>
+        <% else %>
+          <p> <%= link_to "Sign In", new_user_session_path, class: "btn btn-primary" %> or <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %> today! </p>
+        <% end %>
+</header>
+
+<br>
 
 <!-- /.carousel -->
 <!-- Marketing messaging and featurettes
@@ -32,8 +24,8 @@
   <!-- START THE FEATURETTES -->
   <div class="row featurette">
     <div class="col-md-7">
-      <h2 class="featurette-heading">Lightning Quick.</h2>
-      <p class="lead">Super-fast response times.</p>
+      <h2 class="featurette-heading text-center">Lightning Quick.</h2>
+      <p class="lead text-center">Super-fast response times.</p>
     </div>
     <div class="col-md-5">
       <img class="img-responsive img-circle" src="http://lorempixel.com/400/400/nature/10" alt="Generic placeholder image">
