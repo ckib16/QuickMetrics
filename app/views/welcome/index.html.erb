@@ -1,9 +1,70 @@
-<br>
-<div>
-  <h1>Welcome to QuickMetrics</h1>
-  <p>QuickMetrics is an analytics engine that can show your website's performance in charts and graphs.</p>
-  <p>
-    <%= link_to "Sign In", new_user_session_path, class: "btn btn-primary" %> or
-    <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %> today!
-  </p>
+<!-- Kill the opening container so can have full width -->
 </div>
+
+<!-- Carousel ============================== -->
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false" data-pg-collapsed>
+  <!-- Indicators -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="http://pinegrow.com/placeholders/img8.jpg" alt="First slide">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>QuickMetrics</h1>
+          <p>A Quick &amp; Useful Analytics API. Built on Rails.</p>
+          <% if current_user%>
+          <% else %>
+            <p> <%= link_to "Sign In", new_user_session_path, class: "btn btn-primary" %> or <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %> today! </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- /.carousel -->
+<!-- Marketing messaging and featurettes
+================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+<div class="container marketing" data-pg-collapsed>
+  <!-- Three columns of text below the carousel -->
+  <!-- /.row -->
+  <!-- START THE FEATURETTES -->
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">Lightning Quick.</h2>
+      <p class="lead">Super-fast response times.</p>
+    </div>
+    <div class="col-md-5">
+      <img class="img-responsive img-circle" src="http://127.0.0.1:40000/http://pinegrow.com/placeholders/img1.jpg" alt="Generic placeholder image">
+    </div>
+  </div>
+  <hr class="featurette-divider">
+  <div class="row featurette" style="display: block;">
+    <div class="col-md-5">
+      <img class="img-responsive img-circle" src="http://127.0.0.1:40000/http://pinegrow.com/placeholders/img2.jpg" alt="Generic placeholder image">
+    </div>
+    <div class="col-md-7">
+      <h2 class="featurette-heading">Easy setup<span class="text-muted">.</span></h2>
+      <p class="lead">Just add some Javascript to yuor app and you're set!</p>
+    </div>
+  </div>
+  <hr class="featurette-divider">
+  <div class="row featurette" style="display: block;">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">Detailed reports and charts.</h2>
+      <p class="lead">We use chartkick.js to render quick and beautiful analytics reports.</p>
+    </div>
+    <div class="col-md-5">
+      <img class="img-responsive img-circle" src="http://127.0.0.1:40000/http://pinegrow.com/placeholders/img3.jpg" alt="Generic placeholder image">
+    </div>
+  </div>
+  <hr class="featurette-divider">
+  <!-- /END THE FEATURETTES -->
+  <!-- FOOTER -->
+  <footer>
+    <p class="pull-right"><a href="#">Back to top</a></p>
+    <p style="display: block;">© 2015 Vertical Up Design</p>
+  </footer>
+</div>
+<!-- /.container -->

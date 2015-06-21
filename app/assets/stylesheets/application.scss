@@ -17,10 +17,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.user-info {
-  margin-top: 9px;
+/* Remove white padding below alerts that were making gap between navbar and header image when alerts displayed */
+.alert {
+    margin-bottom: 0;
 }
 
-.nav {
-  margin-top: 5px;
+/* Required margin for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+body {
+    margin-top: 50px;
 }
