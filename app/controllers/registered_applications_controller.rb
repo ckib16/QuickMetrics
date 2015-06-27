@@ -46,22 +46,22 @@ class RegisteredApplicationsController < ApplicationController
   def update
     authorize @registered_application
 
-    respond_to do |format|
-      if @registered_application.update(registered_application_params)
-        format.html { redirect_to @registered_application, notice: 'Registered application was successfully updated.' }
-        format.json { render :show, status: :ok, location: @registered_application }
-      else
-        format.html { render :edit }
-        format.json { render json: @registered_application.errors, status: :unprocessable_entity }
-      end
+    if @registered_application.update(registered_application_params)
+      flash[:notice] = "Application was updated."
+      redirect_to @registered_application
+    else
+      flash[:error] = "We couldn't update your application information."
+      render :edit
     end
   end
 
   def destroy
-    @registered_application.destroy
-    respond_to do |format|
-      format.html { redirect_to registered_applications_url, notice: 'Registered application was successfully destroyed.' }
-      format.json { head :no_content }
+    if @registered_application.destroy
+      flash[:notice] = "Application was destroyed"
+      redirect_to registered_applications_url
+    else
+      flash[:error] = "We couldn't destroy your application."
+      render :show
     end
   end
 

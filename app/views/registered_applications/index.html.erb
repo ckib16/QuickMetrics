@@ -1,12 +1,10 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-8">
+  <h1>Listing Registered Applications</h1>
+    <%= render partial: 'registered_applications/registered_application', collection: @registered_applications %>
 
-  <div class="row">
-    <div class="col-md-8">
-    <h1>Listing Registered Applications</h1>
-      <%= render partial: 'registered_applications/registered_application', collection: @registered_applications %>
-
-    </div>
   </div>
+</div>
 
 <% if policy(RegisteredApplication.new).create? %>
         <p class="lead"> <%= link_to 'New Registered application', new_registered_application_path %> </p>
