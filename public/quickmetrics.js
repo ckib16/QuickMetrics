@@ -3,10 +3,6 @@
 $(document).ready( function(){
 
   var Blocmetrics = {
-    authToken: null,
-    setAuthToken: function(auth_token) {
-      this.authToken = auth_token;
-    },
 
     send: function(name, data) {
       var _bm_request = new XMLHttpRequest();
