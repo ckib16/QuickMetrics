@@ -14,10 +14,12 @@ class RegisteredApplicationsController < ApplicationController
     @registered_application = RegisteredApplication.find(params[:id])
 
     # In Syllabus but not used
-    # @events = @registered_application.events.group_by(&:name)
+    @events = @registered_application.events.group_by {|event| event.name}
+
+    @event_count = @events.count
 
     # My own grouping logic instead..
-    @event_count = @registered_application.events.group(:name).count
+    #@event_count = @registered_application.events.group(:name, :created_at).count
   end
 
   def new
