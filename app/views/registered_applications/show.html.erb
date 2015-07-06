@@ -25,16 +25,16 @@
       <th>Number</th>
     </tr>
     <tr>
-    <% @event_count.each do |event, number| %>
-      <td><%= event %></td>
-      <td><%= number %></td>
+    <% @events.each do |event| %>
+      <td><%= event.name %></td>
+      <td><%= @events.count[event.name] %></td>
     </tr>
     <% end %>
   </table>
 <div>
 
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-<%= pie_chart @event_count %>
+<%= pie_chart @events.count %>
 
 <% if true %>
   <%= link_to 'Edit', edit_registered_application_path(@registered_application) %> |
