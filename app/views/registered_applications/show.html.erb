@@ -18,20 +18,6 @@
 <p class="lead">
   <strong>Events Log:</strong><br>
 </p>
-<div class="table-responsive col-md-4">
-  <table class="table table-striped">
-    <tr>
-      <th>Event</th>
-      <th>Number</th>
-    </tr>
-    <tr>
-    <% @events.each do |event| %>
-      <td><%= event.name %></td>
-      <td><%= @events.count[event.name] %></td>
-    </tr>
-    <% end %>
-  </table>
-<div>
 
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 <%= pie_chart @events.count %>
