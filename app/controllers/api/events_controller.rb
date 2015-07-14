@@ -1,4 +1,5 @@
 class API::EventsController < ApplicationController
+  respond_to :html, :json
 
   # Skip CSRF protection in development
   skip_before_action :verify_authenticity_token
