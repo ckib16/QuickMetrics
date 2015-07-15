@@ -13,13 +13,8 @@ class RegisteredApplicationsController < ApplicationController
   def show
     @registered_application = RegisteredApplication.find(params[:id])
 
-    # In Syllabus but not used
     @events = @registered_application.events.group(:name)
 
-
-
-    # My own grouping logic instead..
-    #@event_count = @registered_application.events.group(:name, :created_at).count
   end
 
   def new
