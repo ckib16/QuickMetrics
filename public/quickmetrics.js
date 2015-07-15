@@ -25,4 +25,4 @@ var quickmetrics = (function () {
 
 // Test for curl via app running on localhost:4000
 
-//curl -v -H "Accept: application/json" -H "Origin: http://localhost:4000" -H "Content-Type: application/json" -X POST -d '{"event": {"name":"test_event"}}' http://localhost:3000/api/events
+//curl -v -H "Accept: application/json" -H "Origin: http://localhost:4000" -H "Content-Type: application/json" -X POST -d '{"event": {"name":"test_report"}}' http://localhost:3000/api/events
