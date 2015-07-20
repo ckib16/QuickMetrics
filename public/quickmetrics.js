@@ -1,4 +1,5 @@
 //QuickMetrics snippet to put in tracked application
+//Add JQuery for on document load
 
 var quickmetrics = (function () {
     var my = {};
