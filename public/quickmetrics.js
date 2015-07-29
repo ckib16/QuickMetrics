@@ -1,5 +1,9 @@
 //QuickMetrics snippet to put in tracked application
-//Add JQuery for on document load
+
+// To Do:
+//Add JQuery "wrapper" for on document load
+//Fix Heroku crash on registered_application#show - see SO answer
+// http://stackoverflow.com/questions/20942477/groupingerror-error-column-must-appear-in-the-group-by-clause-or-be-used-in-an
 
 var quickmetrics = (function () {
     var my = {};
