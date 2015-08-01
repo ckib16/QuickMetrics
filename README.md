@@ -56,6 +56,12 @@ To test locally via curl with local app running on localhost:4000
 curl -v -H "Accept: application/json" -H "Origin: http://localhost:4000" -H "Content-Type: application/json" -X POST -d '{"event": {"name":"test_report"}}' http://localhost:3000/api/events
 ```
 
+To test on production apps
+
+```
+curl -v -H "Accept: application/json" -H "Origin: https://groupthink16.herokuapp.com" -H "Content-Type: application/json" -X POST -d '{"event": {"name":"test_report"}}' https://quickmetrics.herokuapp.com/api/events
+```
+
 ## Contributing
 
 1. Fork it!
