@@ -16,7 +16,7 @@ Step 1: Include loading of the JS file in the app's HTML header
 
 ```
 <head>
-  <script src="//quickmetrics.herokuapp.com/assets/quickmetrics.js"></script>
+  <script src="//quickmetrics.herokuapp.com/quickmetrics.js"></script>
   ...other tags...
 </head>
 ```
