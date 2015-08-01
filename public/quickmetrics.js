@@ -1,10 +1,3 @@
-//QuickMetrics snippet to put in tracked application
-
-// To Do:
-//Add JQuery "wrapper" for on document load
-//Fix Heroku crash on registered_application#show - see SO answer
-// http://stackoverflow.com/questions/20942477/groupingerror-error-column-must-appear-in-the-group-by-clause-or-be-used-in-an
-
 var quickmetrics = (function () {
     var my = {};
     _qm_event = {};
@@ -16,8 +9,9 @@ var quickmetrics = (function () {
 
     function _send_data() {
         _qm_request = new XMLHttpRequest();
-        // _qm_request.open("POST", "https://quickmetrics.herokuapp.com/api/events", true);
-        _qm_request.open("POST", "http://localhost:3000/api/events", true);
+        _qm_request.open("POST", "https://quickmetrics.herokuapp.com/api/events", true);
+        // For local testing...
+        //_qm_request.open("POST", "http://localhost:3000/api/events", true);
         _qm_request.setRequestHeader('Content-Type', 'application/json');
         _qm_request.onreadystatechange = function () {
             // don't do anything here, we don't want to interfere with the behavior of the host site
@@ -27,7 +21,3 @@ var quickmetrics = (function () {
 
     return my;
 })();
-
-// Test for curl via app running on localhost:4000
-
-//curl -v -H "Accept: application/json" -H "Origin: http://localhost:4000" -H "Content-Type: application/json" -X POST -d '{"event": {"name":"test_report"}}' http://localhost:3000/api/events
